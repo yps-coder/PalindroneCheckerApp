@@ -1,36 +1,50 @@
 /**
- * PalindromeCheckerApp - A console-based Java application that validates whether
- * a given string is a palindrome under different conditions.
+ * =====================================================
+ * MAIN CLASS - UseCase2PalindromeCheckerApp
+ * =====================================================
  *
- * UC1: Application Entry & Welcome Message
- * This use case handles the application startup, displaying the welcome message
- * and application details.
+ * Use Case 2: Hardcoded Palindrome Validation
+ *
+ * Description:
+ * This class demonstrates basic palindrome validation
+ * using a hardcoded string value.
+ *
+ * The application:
+ * - Stores a predefined string
+ * - Compares characters from both ends
+ * - Determines whether the string is a palindrome
+ * - Displays the result on the console
+ *
+ * @author Developer
+ * @version 2.0
  */
+
 public class PalindromeCheckerApp {
-    /**
-     * Main method - Entry point of the Java application.
-     * This is invoked by the JVM at startup.
-     *
-     * UC1 Flow:
-     * 1. Program starts
-     * 2. JVM invokes the main() method
-     * 3. Application name is displayed
-     * 4. Application version is displayed
-     * 5. Program continues to next use case or exits
-     *
-     * @param args Command line arguments (not used in UC1)
-     */
 
     /**
-     * Displays the welcome message with application name and version.
-     * Key Concepts: Console Output using System.out.println()
+     * Application entry point for UC2.
+     * @param args Command-line arguments
      */
-    private static void main() {
-        System.out.println("====================================");
-        System.out.println("Welcome to palindrome checker management system " );
-        System.out.println("Version: 1.0");
-        System.out.println("system initialized succesfully");
-        System.out.println("====================================");
+    public static void main(String[] args) {
 
+        // Hardcoded string
+        String word = "madam";
+
+        boolean isPalindrome = true;
+
+        // Compare characters from both ends
+        for (int i = 0; i < word.length() / 2; i++) {
+            if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        // Print result
+        if (isPalindrome) {
+            System.out.println("The word \"" + word + "\" is a palindrome.");
+        } else {
+            System.out.println("The word \"" + word + "\" is not a palindrome.");
+        }
     }
 }
